@@ -1,0 +1,3 @@
+docker run --network host --interactive --rm edenhill/kafkacat:1.6.0 -b localhost:9093 -L
+docker exec kafka-kafka-1-1 kafka-topics --create --bootstrap-server kafka-kafka-1-1:9092 --replication-factor 1 --partitions 10 --topic empty-stations
+docker exec kafka-kafka-1-1 kafka-topics --describe --bootstrap-server kafka-kafka-1-1:9092 --topic empty-stations
