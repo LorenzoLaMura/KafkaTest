@@ -1,0 +1,4 @@
+docker-compose up -d
+docker run --network host --interactive --rm edenhill/kafkacat:1.6.0 -b localhost:9093 -L
+docker exec kafkatest-kafka-1-1 kafka-topics --create --bootstrap-server kafkatest-kafka-1-1:9092 --replication-factor 1 --partitions 10 --topic empty-stations
+docker exec kafkatest-kafka-1-1 kafka-topics --describe --bootstrap-server kafkatest-kafka-1-1:9092 --topic empty-stations
